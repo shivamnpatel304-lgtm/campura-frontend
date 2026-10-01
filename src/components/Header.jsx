@@ -28,7 +28,7 @@ export default function Header() {
           <div className="flex gap-5">
             <span>campurapremium@gmail.com</span>
             <span>+91 99097 89420</span>
-            <span>+91 93272 19360</span>
+            {/* <span>+91 93272 19360</span> */}
           </div>
         </div>
       </div>
