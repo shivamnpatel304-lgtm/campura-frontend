@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { ArrowRight, Leaf, Flower2, ShieldCheck, Globe2, UsersRound, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Leaf, ShieldCheck, Globe2, UsersRound, CheckCircle2, Factory } from "lucide-react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PageHero from "./components/PageHero";
 import ProductCard from "./components/ProductCard";
 import { products as fallbackProducts } from "./data";
+import heroBg from "./assets/hero-bg.png";
 
 const features = [
   [Leaf, "PREMIUM", "QUALITY"],
-  [Flower2, "PURE &", "NATURAL"],
-  [ShieldCheck, "HYGIENIC", "PROCESS"],
-  [Globe2, "GLOBAL", "SUPPLY"],
+  [Factory, "INDIAN", "MANUFACTURER"],
+  [ShieldCheck, "HYGIENIC", "PRODUCTION"],
+  [Globe2, "GLOBAL", "REACH"],
 ];
 
 function normalizeProduct(product) {
@@ -69,75 +70,74 @@ function Home() {
 
   return (
     <>
-      <section className="hero-pattern overflow-hidden">
-        <div className="mx-auto grid max-w-[1500px] items-center lg:grid-cols-[48%_52%]">
-          <div className="px-6 py-16 lg:px-12 lg:py-24 reveal">
-            <div className="mb-7 flex items-center gap-3 text-xs tracking-[.32em] text-[#a2761d]">
-              <span className="h-px w-14 bg-[#b58a2c]" /> PREMIUM INDIAN MANUFACTURER
+      <section className="relative min-h-[640px] lg:min-h-[760px] xl:min-h-[820px] flex items-center overflow-hidden bg-[#eedfc5]">
+        {/* Full Hero Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={heroBg}
+            alt="Campura Pure Camphor Ritual Background"
+            className="h-full w-full object-cover object-[78%_center] sm:object-[70%_center] lg:object-right-center xl:object-center"
+          />
+          {/* Subtle gradient on small screens to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f8f1df]/95 via-[#f8f1df]/75 to-transparent md:hidden" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 mx-auto w-full max-w-[1500px] px-6 py-14 sm:py-20 lg:px-14 lg:py-24">
+          <div className="max-w-2xl reveal">
+            {/* Eyebrow */}
+            <div className="mb-6 flex items-center gap-3 text-[11px] sm:text-xs tracking-[.32em] text-[#a2761d] font-semibold uppercase">
+              <span className="h-px w-10 bg-[#b58a2c]" /> PREMIUM INDIAN MANUFACTURER
             </div>
 
-            <h1 className="font-display text-6xl leading-[.9] tracking-wide text-[#123d29] sm:text-7xl lg:text-[92px]">
+            {/* Headline */}
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[80px] xl:text-[90px] leading-[0.92] tracking-wide text-[#123d29]">
               PURE
               <br />CAMPHOR.
-              <span className="mt-3 block text-[#b58a2c]">DIVINE<br />AROMA.</span>
+              <span className="mt-2 block text-[#a2761d]">
+                DIVINE<br />AROMA.
+              </span>
             </h1>
 
-            <div className="my-8 flex items-center gap-3">
-              <span className="h-px w-48 bg-[#b58a2c]" />
-              <span className="text-xl text-[#b58a2c]">❈</span>
+            {/* Divider with flower emblem */}
+            <div className="my-6 sm:my-7 flex items-center gap-3">
+              <span className="h-px w-36 sm:w-44 bg-[#b58a2c]/70" />
+              <span className="text-base text-[#b58a2c]">✤</span>
             </div>
 
-            <p className="max-w-xl text-sm leading-7 tracking-[.12em] text-[#34473b] md:text-base">
+            {/* Sub-headline */}
+            <p className="max-w-md text-xs sm:text-sm leading-6 tracking-[.18em] text-[#3f3522] font-medium uppercase">
               PREMIUM CAMPHOR & FRAGRANCE PRODUCTS
               <br />MANUFACTURED IN INDIA
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link to="/products" className="rounded-full bg-[#123d29] px-7 py-4 text-sm font-semibold tracking-wide text-[#f1d98d] transition hover:-translate-y-1 hover:bg-[#1d5138]">
-                EXPLORE PRODUCTS <ArrowRight className="ml-2 inline" size={16} />
+            {/* Action Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                to="/products"
+                className="inline-flex items-center gap-2 rounded-full bg-[#123d29] px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider text-[#f1d98d] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#1b4e36]"
+              >
+                EXPLORE PRODUCTS <ArrowRight size={15} />
               </Link>
-              <Link to="/contact" className="rounded-full border border-[#b58a2c] px-7 py-4 text-sm font-semibold tracking-wide text-[#8d681b] transition hover:bg-[#b58a2c] hover:text-white">
-                <UsersRound className="mr-2 inline" size={16} /> BECOME A PARTNER
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-[#b58a2c] bg-[#f8f1df]/70 backdrop-blur-sm px-7 py-3.5 text-xs sm:text-sm font-semibold tracking-wider text-[#634814] shadow-sm transition hover:bg-[#b58a2c] hover:text-white"
+              >
+                <UsersRound size={16} /> BECOME A PARTNER
               </Link>
             </div>
 
-            <div className="mt-14 grid max-w-2xl grid-cols-2 sm:grid-cols-4">
+            {/* 4 Feature Highlights */}
+            <div className="mt-12 grid max-w-xl grid-cols-2 gap-y-4 sm:grid-cols-4 pt-6 border-t border-[#d8c8a8]/80">
               {features.map(([Icon, a, b], i) => (
-                <div key={a} className={`px-4 text-center ${i ? "border-l border-[#d8c9a7]" : ""}`}>
-                  <Icon className="mx-auto mb-3 text-[#a2761d]" size={34} strokeWidth={1.2} />
-                  <div className="text-[11px] tracking-[.13em]">{a}<br />{b}</div>
+                <div key={a} className={`px-2 ${i ? "sm:border-l sm:border-[#d8c8a8]/80 sm:pl-4" : ""}`}>
+                  <Icon className="mb-2 text-[#a2761d]" size={26} strokeWidth={1.3} />
+                  <div className="text-[10px] font-semibold tracking-[.14em] text-[#594d36] uppercase">
+                    {a}<br />{b}
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="relative min-h-[600px] overflow-hidden lg:min-h-[760px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_48%_45%,#fffdf7_0%,#f3e8ce_45%,transparent_70%)]" />
-            <div className="absolute right-[10%] top-[20%] h-80 w-80 rounded-full bg-white/70 blur-3xl" />
-            <div className="absolute bottom-[13%] left-[12%] h-20 w-56 rotate-[-10deg] rounded-[50%] bg-[#d6c9a9] opacity-40 blur-xl" />
-            <div className="absolute left-[12%] top-[25%] text-[90px] opacity-10">〰</div>
-
-            <div className="absolute left-[18%] top-[23%] h-16 w-44 rounded-[50%] bg-[#b78b2b] shadow-[0_20px_40px_rgba(82,59,15,.25)]" />
-            <div className="absolute left-[22%] top-[20%] h-12 w-36 rounded-[50%] bg-[#e6c96d]" />
-            <div className="absolute left-[22%] top-[16%] h-20 w-20 rounded-full border-[12px] border-[#d6c9a9]" />
-            <div className="absolute left-[28%] top-[30%] h-52 w-52 rounded-full border-8 border-[#b78b2b] bg-gradient-to-br from-[#d8b456] to-[#936b1b] shadow-2xl" />
-            <div className="absolute left-[31%] top-[35%] h-40 w-40 rounded-full bg-[#fffaf0] shadow-inner" />
-            <div className="absolute left-[36%] top-[41%] h-24 w-24 rotate-12 rounded-2xl bg-white shadow-lg" />
-            <div className="absolute left-[29%] top-[39%] h-20 w-20 -rotate-12 rounded-2xl bg-[#fffdf5] shadow-lg" />
-            <div className="absolute left-[40%] top-[35%] h-20 w-20 rotate-45 rounded-2xl bg-white shadow-lg" />
-            <div className="absolute left-[35%] top-[31%] h-16 w-16 rotate-12 rounded-2xl bg-[#fffefa] shadow-lg" />
-            <div className="absolute left-[31%] top-[51%] h-10 w-10 rounded-full bg-white shadow-lg" />
-            <div className="absolute left-[41%] top-[52%] h-12 w-12 rounded-full bg-white shadow-lg" />
-            <div className="absolute left-[40%] top-[70%] h-16 w-32 rounded-[50%] bg-[#a4771e]" />
-            <div className="absolute left-[31%] top-[69%] h-6 w-48 rounded-full bg-[#c6b999] opacity-60 blur-md" />
-
-            <div className="absolute right-[7%] top-[10%] h-[520px] w-4 rotate-[18deg] rounded-full bg-[#365e31] opacity-80" />
-            <div className="absolute right-[4%] top-[18%] h-24 w-48 rotate-[18deg] rounded-[100%_0] bg-[#4b7c3d] opacity-80" />
-            <div className="absolute right-[8%] top-[35%] h-28 w-52 rotate-[-18deg] rounded-[0_100%] bg-[#527f43] opacity-80" />
-            <div className="absolute right-[18%] top-[52%] h-24 w-44 rotate-[24deg] rounded-[100%_0] bg-[#5b8749] opacity-70" />
-            <div className="absolute right-[1%] top-[58%] h-28 w-52 rotate-[-15deg] rounded-[0_100%] bg-[#3e6e37] opacity-75" />
-
-            <div className="absolute bottom-[7%] left-[15%] font-display text-4xl text-[#a2761d]/70">✦</div>
           </div>
         </div>
       </section>
