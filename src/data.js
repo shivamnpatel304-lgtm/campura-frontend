@@ -26,26 +26,5 @@ export const products = [
     description: "A curated range of aromatic products designed to bring warmth and serenity to every space.",
     tag: "PREMIUM",
     image: fragranceProductsImg,
-  },
-  {
-    id: "pooja-essentials",
-    name: "Pooja Essentials",
-    category: "Pooja",
-    description: "Reliable ritual essentials made with attention to quality, packaging and presentation.",
-    tag: "NEW",
-  },
-  {
-    id: "bulk-camphor",
-    name: "Bulk Camphor",
-    category: "B2B",
-    description: "Bulk and private-label supply options for distributors, retailers and international buyers.",
-    tag: "B2B",
-  },
-  {
-    id: "custom-packaging",
-    name: "Custom Packaging",
-    category: "B2B",
-    description: "Flexible packaging solutions for businesses looking to build their own premium product range.",
-    tag: "PARTNER",
-  },
+  }
 ];
