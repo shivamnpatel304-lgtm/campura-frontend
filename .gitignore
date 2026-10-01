@@ -30,3 +30,7 @@ ENV/
 __pycache__/
 *.pyc
 .pytest_cache
+requirements.txt
+*.py
+app/
+tests/
