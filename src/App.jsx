@@ -24,6 +24,7 @@ function normalizeProduct(product) {
       product.Description ??
       `${product.name ?? product.Name ?? "Campura Product"} from our premium collection.`,
     tag: product.tag ?? product.Tag ?? "PRODUCT",
+    image: product.image ?? product.imageUrl ?? product.ImageUrl ?? null,
   };
 }
 
@@ -225,10 +226,18 @@ function ProductDetails({ id }) {
     <>
       <PageHero eyebrow={String(product.category).toUpperCase()} title={product.name} description={product.description}/>
       <section className="mx-auto grid max-w-5xl gap-10 px-6 py-16 md:grid-cols-2">
-        <div className="grid min-h-[420px] place-items-center rounded-3xl bg-[#eadfc6]">
-          <div className="grid h-52 w-52 place-items-center rounded-full bg-[#c69a3b] shadow-2xl">
-            <Flower2 size={90} className="text-[#f8edc8]" strokeWidth={1}/>
-          </div>
+        <div className="flex min-h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-[#eadfc6]">
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            <div className="grid h-52 w-52 place-items-center rounded-full bg-[#c69a3b] shadow-2xl">
+              <Flower2 size={90} className="text-[#f8edc8]" strokeWidth={1} />
+            </div>
+          )}
         </div>
         <div className="py-5">
           <div className="text-xs font-bold tracking-[.3em] text-[#a2761d]">CAMPURA QUALITY</div>

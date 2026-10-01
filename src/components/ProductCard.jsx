@@ -5,12 +5,20 @@ export default function ProductCard({ product }) {
   return (
     <article className="group rounded-3xl border border-[#e1d4b8] bg-[#fffaf0] p-6 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
       <div className="relative mb-6 flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-[#eee2c7]">
-        <div className="float-slow grid h-32 w-32 place-items-center rounded-full bg-[#c99b38] shadow-xl">
-          <div className="grid h-24 w-24 place-items-center rounded-full bg-[#e9dcae]">
-            <Flower2 size={54} strokeWidth={1.1} className="text-[#7e5c18]" />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="float-slow grid h-32 w-32 place-items-center rounded-full bg-[#c99b38] shadow-xl">
+            <div className="grid h-24 w-24 place-items-center rounded-full bg-[#e9dcae]">
+              <Flower2 size={54} strokeWidth={1.1} className="text-[#7e5c18]" />
+            </div>
           </div>
-        </div>
-        <span className="absolute left-4 top-4 rounded-full bg-[#123d29] px-3 py-1 text-[10px] font-bold tracking-widest text-[#f1d98d]">
+        )}
+        <span className="absolute left-4 top-4 rounded-full bg-[#123d29] px-3 py-1 text-[10px] font-bold tracking-widest text-[#f1d98d] shadow-sm">
           {product.tag}
         </span>
       </div>
