@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  color: #163d2b;
+  background: #f8f1df;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f8f1df; }
+a { text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+
+.font-display { font-family: "Cormorant Garamond", serif; }
+
+::selection {
+  background: #d0a84b;
+  color: #123d29;
+}
+
+.hero-pattern {
+  background:
+    radial-gradient(circle at 70% 35%, rgba(255,255,255,.9), transparent 32%),
+    radial-gradient(circle at 85% 75%, rgba(213,191,127,.24), transparent 25%),
+    linear-gradient(120deg, #faf4e6 0%, #f7efd9 100%);
+}
+
+.gold-line {
+  background: linear-gradient(90deg, transparent, #b58a2c, transparent);
+}
+
+.reveal {
+  animation: reveal .8s ease both;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.leaf-shape {
+  border-radius: 100% 0 100% 0;
+  transform: rotate(25deg);
+}
+
+.glass {
+  background: rgba(255, 250, 239, .72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
