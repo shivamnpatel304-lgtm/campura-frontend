@@ -19,15 +19,16 @@ export default function Header() {
     <>
       <div className="hidden bg-[#123d29] text-[#f1d98d] md:block">
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-8 py-2.5 text-[12px] tracking-[.08em]">
-          <span className="flex items-center gap-2"><Sparkles size={13}/> PURE CAMPHOR. DIVINE AROMA.</span>
+          <span className="flex items-center gap-2"><Sparkles size={13} /> PURE CAMPHOR. DIVINE AROMA.</span>
           <div className="flex gap-7">
             <span>Premium Quality</span>
             <span>Made in India</span>
             <span>Global Supply</span>
           </div>
           <div className="flex gap-5">
-            <span>info@campura.in</span>
-            <span>+91 98765 43210</span>
+            <span>campurapremium@gmail.com</span>
+            <span>+91 99097 89420</span>
+            <span>+91 93272 19360</span>
           </div>
         </div>
       </div>
@@ -48,13 +49,12 @@ export default function Header() {
                 key={path}
                 to={path}
                 className={({ isActive }) =>
-                  `relative py-2 text-[13px] font-medium tracking-wide transition ${
-                    isActive ? "text-[#a2761d]" : "text-[#163d2b] hover:text-[#a2761d]"
+                  `relative py-2 text-[13px] font-medium tracking-wide transition ${isActive ? "text-[#a2761d]" : "text-[#163d2b] hover:text-[#a2761d]"
                   }`
                 }
               >
                 {label}
-                {label === "Products" && <ChevronDown className="ml-1 inline" size={13}/>}
+                {label === "Products" && <ChevronDown className="ml-1 inline" size={13} />}
               </NavLink>
             ))}
           </nav>
@@ -67,7 +67,7 @@ export default function Header() {
           </Link>
 
           <button className="lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-            {open ? <X size={28}/> : <Menu size={28}/>}
+            {open ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 

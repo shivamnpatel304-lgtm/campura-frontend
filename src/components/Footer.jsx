@@ -25,9 +25,10 @@ export default function Footer() {
         <div>
           <h3 className="mb-4 font-semibold">CONTACT</h3>
           <div className="space-y-3 text-sm text-[#d9cfae]">
-            <p className="flex gap-2"><Mail size={17}/> info@campura.in</p>
-            <p className="flex gap-2"><Phone size={17}/> +91 98765 43210</p>
-            <p className="flex gap-2"><MapPin size={17}/> India</p>
+            <p className="flex gap-2"><Mail size={17} /> campurapremium@gmail.com</p>
+            <p className="flex gap-2"><Phone size={17} /> +91 99097 89420</p>
+            <p className="flex gap-2"><Phone size={17} /> +91 93272 19360</p>
+            <p className="flex gap-2"><MapPin size={17} /> India</p>
           </div>
         </div>
       </div>
