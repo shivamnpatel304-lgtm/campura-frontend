@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
     <footer className="bg-[#103725] text-[#ead59a]">
       <div className="mx-auto grid max-w-[1300px] gap-10 px-6 py-14 md:grid-cols-4 lg:px-10">
         <div className="md:col-span-2">
-          <div className="font-display text-5xl tracking-[.08em]">CAMPURA</div>
-          <p className="mt-3 max-w-md text-sm leading-7 text-[#d9cfae]">
+          <Link to="/" className="inline-block rounded-2xl bg-[#fffdf7] px-4 py-2.5 shadow-md transition-transform duration-200 hover:scale-[1.02]">
+            <img src={logo} alt="Campura" className="h-12 w-auto object-contain" />
+          </Link>
+          <p className="mt-4 max-w-md text-sm leading-7 text-[#d9cfae]">
             Premium camphor and fragrance products manufactured in India with a focus on purity, consistency and dependable supply.
           </p>
         </div>
